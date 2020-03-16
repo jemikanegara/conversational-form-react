@@ -1,0 +1,194 @@
+[
+    {
+        "tag": "cf-robot-message",
+        "cf-questions": "Welcome to Company Document Builder"
+    },
+    {
+        "tag": "fieldset",
+        "cf-input-placeholder": "Choose one of the above",
+        "cf-questions": "Choose type of your company:",
+        "children": [
+            {
+                "tag": "input",
+                "type": "radio",
+                "name": "q-1",
+                "cf-label": "Delaware corporation",
+                "value": "1"
+            },
+            {
+                "tag": "input",
+                "type": "radio",
+                "name": "q-1",
+                "cf-label": "Other",
+                "value": "2"
+            }
+        ]
+    },
+    {
+        "tag": "fieldset",
+        "cf-input-placeholder": "Choose one of the above",
+        "cf-questions": "Does your company have subsidiaries?",
+        "children": [
+            {
+                "tag": "input",
+                "type": "radio",
+                "name": "q-2",
+                "cf-label": "Yes",
+                "value": "1"
+            },
+            {
+                "tag": "input",
+                "type": "radio",
+                "name": "q-2",
+                "cf-label": "No",
+                "value": "0"
+            }
+        ]
+    },
+    {
+        "tag": "fieldset",
+        "cf-input-placeholder": "Choose one of the above",
+        "cf-questions": "With whom do you want to sign an NDA?",
+        "children": [
+            {
+                "tag": "input",
+                "type": "radio",
+                "name": "q-3",
+                "cf-label": "Customer",
+                "value": "1"
+            },
+            {
+                "tag": "input",
+                "type": "radio",
+                "name": "q-3",
+                "cf-label": "Consultant",
+                "value": "2"
+            },
+            {
+                "tag": "input",
+                "type": "radio",
+                "name": "q-3",
+                "cf-label": "Vendor",
+                "value": "3"
+            },
+            {
+                "tag": "input",
+                "type": "radio",
+                "name": "q-3",
+                "cf-label": "Other",
+                "value": "4"
+            }
+        ]
+    },
+    {
+        "tag": "fieldset",
+        "cf-input-placeholder": "Choose one of the above",
+        "cf-questions": "Choose term of confidentiality obligations:",
+        "children": [
+            {
+                "tag": "input",
+                "type": "radio",
+                "name": "q-5",
+                "cf-label": "Standard",
+                "value": "1"
+            },
+            {
+                "tag": "input",
+                "type": "radio",
+                "name": "q-5",
+                "cf-label": "Hardware specific",
+                "value": "1"
+            },
+            {
+                "tag": "input",
+                "type": "radio",
+                "name": "q-5",
+                "cf-label": "Biotech specific",
+                "value": "1"
+            },
+            {
+                "tag": "input",
+                "type": "radio",
+                "name": "q-5",
+                "cf-label": "Catch all, short",
+                "value": "1"
+            },
+            {
+                "tag": "input",
+                "type": "radio",
+                "name": "q-5",
+                "cf-label": "Catch all, long",
+                "value": "1"
+            },
+            {
+                "tag": "input",
+                "type": "radio",
+                "name": "q-5",
+                "cf-label": "User’s choice",
+                "value": "1"
+            }
+        ]
+    },
+    {
+        "tag": "input",
+        "type": "text",
+        "cf-questions": "What is your nationality",
+        "cf-input-placeholder": "Write down your nationality, we will use dialogflow to do NLP (not yet implemented)"
+    },
+    {
+        "tag": "fieldset",
+        "type": "checkboxes",
+        "cf-input-placeholder": "Choose above (this will be skipped if you choose no to the second question), check developer console for the form result",
+        "cf-questions": "Choose specific scope of confidential information to be protected under agreement:",
+        "children": [
+            {
+                "tag": "input",
+                "type": "checkbox",
+                "name": "q-6",
+                "cf-label": "All",
+                "value": "all",
+                "cf-conditional-q-2": "1"
+            },
+            {
+                "tag": "input",
+                "type": "checkbox",
+                "name": "q-6",
+                "cf-label": "Patents and patent applications",
+                "value": "patent",
+                "cf-conditional-q-2": "1"
+            },
+            {
+                "tag": "input",
+                "type": "checkbox",
+                "name": "q-6",
+                "cf-label": "Trade secrets",
+                "value": "trade secret",
+                "cf-conditional-q-2": "1"
+            },
+            {
+                "tag": "input",
+                "type": "checkbox",
+                "name": "q-6",
+                "cf-label": "Product or service ideas",
+                "value": "products",
+                "cf-conditional-q-2": "1"
+            },
+            {
+                "tag": "input",
+                "type": "checkbox",
+                "name": "q-6",
+                "cf-label": "Techniques",
+                "value": "techniques",
+                "cf-conditional-q-2": "1"
+            },
+            {
+                "tag": "input",
+                "type": "checkbox",
+                "name": "q-6",
+                "cf-label": "Sketches and designs",
+                "value": "sketches",
+                "cf-conditional-q-2": "1"
+            }
+        ]
+    }
+]

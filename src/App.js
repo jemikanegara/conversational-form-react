@@ -1,24 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useRef, useEffect} from 'react';
 import './App.css';
+import { ConversationalForm } from 'conversational-form';
+import formFields from './data'
 
 function App() {
+  const chatRef = useRef(null)
+
+  useEffect(() => {
+    const initialize = () => {
+      const submitCallback = () => {
+        const formDataSerialized = newChat.getFormData(true);
+        console.log("Formdata, obj:", formDataSerialized);
+        newChat.addRobotChatResponse("You are done (after this user will be redirected to another page)")
+      }
+      const flowStepCallback = (dto, success, error) => {
+        const questionTagType = dto.tag.type
+        if (questionTagType === 'text'){ 
+          console.log(dto)
+          success()
+        }
+        else success()
+      }
+      const newChat = ConversationalForm.startTheConversation({
+        options: {
+          flowStepCallback,
+          submitCallback,
+          preventAutoFocus: true,
+          showProgressBar: true
+        },
+        tags: formFields,
+      })
+      chatRef.current.appendChild(newChat.el)
+    }
+    
+    initialize()
+  }, [])
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div ref={chatRef} />
     </div>
   );
 }
